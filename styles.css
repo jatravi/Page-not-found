@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: auto;  /* Set the desired width */
+  height: 300px; /* Set the desired height */
+  overflow: hidden;
+  /* Adjusting clip-path to have a smoother curve */
+  clip-path: ellipse(70% 60% at 50% 50%); /* Using ellipse for smooth, curved edges */
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.3s ease-out;
+  transform: perspective(600px); /* Perspective to give depth to the 3D effect */
+}
+
+.card:hover {
+  /* On hover, apply 3D tilt effect */
+  transform: perspective(600px) rotateX(20deg) rotateY(20deg);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits within the card */
+  clip-path: inherit; /* Inherit the clip-path from the card to maintain shape */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.error-container {
+  text-align: center;
+  margin-top: 30px;
+  color: $white;
+}
+
+.error-message {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-family: $handwriting;
+}
+
+.error-description {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #bbb;
+}
+
+.go-home-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.8em 2em;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
